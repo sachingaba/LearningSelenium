@@ -1,4 +1,4 @@
-package com.thetestingacademy.ex_03_Selenium_Locators.TestSelenium017_Project_Locators_Selenium_ID_ClassName_Name;
+package com.thetestingacademy.ex_03_Selenium_Locators;
 
 import com.thetestingacademy.CommonToALL;
 import io.qameta.allure.Description;
@@ -52,6 +52,7 @@ public class TestSelenium017_Project_Locators_Selenium_ID_ClassName_Name extends
 
         closeBrowser(driver);
     }
+
     @Description("TC#2 - Test to verify valid credentials gives Successful login")
     @Owner("Sachin Gaba")
     @Severity(SeverityLevel.CRITICAL)
