@@ -7,6 +7,7 @@ public class CommonToALL {
     public void openBrowser(WebDriver driver, String url){
         driver.get(url);
         driver.manage().window().maximize();
+        customWait(2000);
 
     }
     public void closeBrowser(WebDriver driver){
@@ -16,8 +17,13 @@ public class CommonToALL {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-
         driver.quit();
+    }
+    public void customWait(int time){
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

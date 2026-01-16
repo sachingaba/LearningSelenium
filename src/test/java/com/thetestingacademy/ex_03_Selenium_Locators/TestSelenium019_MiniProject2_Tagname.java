@@ -80,3 +80,7 @@ public class TestSelenium019_MiniProject2_Tagname extends CommonToALL {
         closeBrowser(driver);
     }
 }
+
+////input[@name="username"]4
+//input[@name="password"]
+//button[@type = "submit"]
