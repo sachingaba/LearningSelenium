@@ -17,40 +17,50 @@ public class SelectorsHub_Practise extends CommonToALL {
 
     @Test
     public void verifyForm(){
+
         WebDriver driver = new ChromeDriver();
 
         openBrowser(driver,"https://selectorshub.com/xpath-practice-page/");
+//------------------------------------------------------Normal Form-----
 
         WebElement user_form = driver.findElement(By.xpath("//input[@name=\"email\"]"));
-        user_form.sendKeys("Sachingaba@gcm.com");
-
         WebElement pass_form = driver.findElement(By.xpath("//input[@id=\"pass\"]"));
-        pass_form.sendKeys("kdljfh@kd2");
 
         WebElement company_form = driver.findElement(By.xpath("//input[@name=\"company\"]"));
+        WebElement mobile_form = driver.findElement(By.xpath("//input[@name=\"mobile number\"]"));
+        WebElement country_form = driver.findElement(By.xpath("//label[text()=\"Country\"]/input"));
+        WebElement submit_form = driver.findElement(By.xpath("//button[text()='Submit']"));
+
+        //Search Icon: document.querySelector("div#userName").shadowRoot.querySelector("svg")
+
+        user_form.sendKeys("Sachingaba@gcm.com");
+
+        pass_form.sendKeys("kdljfh@kd2");
+
         company_form.sendKeys("Intercell");
 
-        WebElement mobile_form = driver.findElement(By.xpath("//input[@name=\"mobile number\"]"));
         mobile_form.sendKeys("89297942");
 
-        WebElement country_form = driver.findElement(By.xpath("//label[text()=\"Country\"]/input"));
         country_form.sendKeys("India");
-
-        WebElement submit_form = driver.findElement(By.xpath("//button[@value=\"Submit\"]"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("window.scrollBy(0,900)");
+        System.out.println("Scroll done");
         //submit_form.click();
 
-      //-----------------------------------------------------------------------------------------------------------------
+      //------------------------------------------------------------------------------------------Shadow DOM--------------------
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+
       WebElement user_shad =(WebElement)  js.executeScript("return document.querySelector(\"div#userName\").shadowRoot.querySelector(\"input#kils\")");
 
-      user_shad.sendKeys("Hello");
+        WebElement pizza_shad = (WebElement) js.executeScript("return document.querySelector(\"div#userName\").shadowRoot.querySelector(\"div#app2\").shadowRoot.querySelector(\"input#pizza\")") ;
 
-      WebElement pizza_shad = (WebElement) js.executeScript("return document.querySelector(\"div#userName\").shadowRoot.querySelector(\"div#app2\").shadowRoot.querySelector(\"input#pizza\")") ;
-      pizza_shad.sendKeys("farmhouse");
+        WebElement concept_shad = (WebElement) js.executeScript("return document.querySelector(\"div#userName\").shadowRoot.querySelector(\"div#concepts\")");
 
-      WebElement concept_shad = (WebElement) js.executeScript("return document.querySelector(\"div#userName\").shadowRoot.querySelector(\"div#concepts\")");
-      //concept_shad.click();
+        user_shad.sendKeys("Hello");
+
+       pizza_shad.sendKeys("farmhouse");
+
+     //concept_shad.click();
 
 
         Actions action = new Actions(driver);
@@ -78,13 +88,30 @@ public class SelectorsHub_Practise extends CommonToALL {
         System.out.println(modalContent.getText());
         Assert.assertTrue(modalContent.getText().contains("Testing Daily - Free App To Get The Latest Testing Feed."));
 
+        WebElement close_modal = driver.findElement(By.tagName("body"));
+        close_modal.click();
 
+        /// ----------------------------------------------------------------------payment form
 
+        WebElement payment_form = driver.findElement(By.xpath("//div[@data-id=\"c723110\"]"));
 
+        WebElement payment_Name = driver.findElement(By.xpath("//input[@id=\"cardName\"]"));
+        payment_Name.sendKeys("Sachin Gaba");
 
+        WebElement card = driver.findElement(By.id("cardNumber"));
+        card.sendKeys("5465456456465456");
 
+        WebElement expiry = driver.findElement(By.id("expiry"));
+        expiry.sendKeys("0222");
 
+        WebElement cvv = driver.findElement(By.id("cvv"));
+        cvv.sendKeys("546");
 
+        WebElement submitPay = driver.findElement(By.xpath("//button[contains(text(),\"Pay\")]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),\"Pay\")]")));
+        action.moveToElement(submitPay).build().perform();
+        submitPay.click();
+Assert.assertEquals(driver.getCurrentUrl(),"https://selectorshub.com/xpath-practice-page/?");
 
         closeBrowser(driver);
 
