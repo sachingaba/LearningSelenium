@@ -22,6 +22,7 @@ public class TestSelenium36_Drag_Drop extends CommonToALL {
         Actions actions = new Actions(driver);
         actions.dragAndDrop(from,to).build().perform();
 
+
         closeBrowser(driver);
 
 

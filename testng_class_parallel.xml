@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite" parallel="classes" thread-count="2">
+
+    <!-- Allure Report Configuration - Add these listeners -->
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test verbose="2" preserve-order="true" name="Selenium Test Suite">
+
+        <!-- Exception Handling Tests -->
+        <classes>
+            <!-- Selenium Exceptions -->
+            <class name="com.thetestingacademy.Ex_16_Selenium_Exceptions.TestSelenium45_SeleniumExceptions">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.Ex_16_Selenium_Exceptions.TestSelenium46_NoSuchElementException_Fix">
+                <methods>
+                    <include name="testSeleniumExceptions"/>
+                    <include name="testTryCatchNoSuchElement"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.Ex_16_Selenium_Exceptions.TestSelenium47_Stale">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.Ex_16_Selenium_Exceptions.TestSelenium48_Stale_Wait_Fix">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.Ex_16_Selenium_Exceptions.TestSelenium49_TimeOutException">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+
+            <!-- Mini Projects -->
+            <class name="com.thetestingacademy.MiniProjects.Intercell.MenteeProfile">
+                <methods>
+                    <include name="menteeProfileUpdate"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.MiniProjects.Intercell.Session_Booking">
+                <methods>
+                    <include name="createSession"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.MiniProjects.SelectorsHub.SelectorsHub_Practise">
+                <methods>
+                    <include name="verifyForm"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.MiniProjects.TTA_Bank.TTA_Bank_Add_Beneficiary">
+                <methods>
+                    <include name="test_add_beneficiary"/>
+                </methods>
+            </class>
+
+            <!-- Selenium Basics -->
+            <class name="com.thetestingacademy.ex_02_Selenium_Basics.TestSelenium008_Maximize_Minimize">
+                <methods>
+                    <include name="test1"/>
+                    <include name="test2"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_02_Selenium_Basics.TestSelenium009_AssertJ_TestNG">
+                <methods>
+                    <include name="test1"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_02_Selenium_Basics.TestSelenium012_Navigation_Get_Navigate_To">
+                <methods>
+                    <include name="test_Selenium"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_02_Selenium_Basics.TestSelenium016_MIni_project2_Add_Extension">
+                <methods>
+                    <include name="test_Selenium01"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_02_Selenium_Basics.TestSelenium_ProjectNo_1">
+                <methods>
+                    <include name="testVerifyText"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_02_Selenium_Basics.testSelenium002">
+                <methods>
+                    <include name="testBrowser"/>
+                    <include name="testBrowser1"/>
+                </methods>
+            </class>
+
+            <!-- Locators -->
+            <class name="com.thetestingacademy.ex_03_Selenium_Locators.TestSelenium017_Project_Locators_Selenium_ID_ClassName_Name">
+                <methods>
+                    <include name="test_vwo_login_Invalid_Login"/>
+                    <include name="test_vwo_login_Valid_Login"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_03_Selenium_Locators.TestSelenium018_LinkText_Partial_Text_TagName_Locators">
+                <methods>
+                    <include name="verify_Vwo_Login"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_03_Selenium_Locators.TestSelenium019_MiniProject2_Tagname">
+                <methods>
+                    <include name="verify_Vwo_Login_errorMessgeVerify"/>
+                    <include name="verify_Vwo_Login_valid_email"/>
+                </methods>
+            </class>
+
+            <!-- XPath -->
+            <class name="com.thetestingacademy.ex_04_Selenium_XPATH.TestSelenium20_MiniProject">
+                <methods>
+                    <include name="test_OHRM_login"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_04_Selenium_XPATH.TestSelenium20_MiniProject_sachin">
+                <methods>
+                    <include name="test_OHRM_login"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_04_Selenium_XPATH.TestSelenium21_MiniProject2">
+                <methods>
+                    <include name="test_OHRM_login"/>
+                </methods>
+            </class>
+
+            <!-- Waits -->
+            <class name="com.thetestingacademy.ex_05_Selenium_Waits.TestSelenium22_Waits">
+                <methods>
+                    <include name="verifyWait"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_05_Selenium_Waits.TestSelenium23_MiniProject">
+                <methods>
+                    <include name="verify_login_invalid"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_05_Selenium_Waits.TestSelenium24_MiniProject4">
+                <methods>
+                    <include name="closeModal"/>
+                </methods>
+            </class>
+
+            <!-- Inputs/Select/Alerts -->
+            <class name="com.thetestingacademy.ex_06_Inputs_Select_Alert_Radio.TestSelenium26_Inputs_CheckBox_Radio">
+                <methods>
+                    <include name="test_Html_Tags"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_06_Inputs_Select_Alert_Radio.TestSelenium27_Select_Static">
+                <methods>
+                    <include name="test_select"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_06_Inputs_Select_Alert_Radio.TestSelenium28_Alerts">
+                <methods>
+                    <include name="test_Alerts"/>
+                    <include name="test_Confirm_Ok"/>
+                    <include name="test_Confirm_Cancel"/>
+                    <include name="test_Confirm_Prompt_Ok"/>
+                    <include name="test_Confirm_Prompt_Cancel"/>
+                </methods>
+            </class>
+
+            <!-- SVG & Tables -->
+            <class name="com.thetestingacademy.ex_08_SVG_Elements.TestSelenium30_Svg">
+                <methods>
+                    <include name="Test_svg"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_08_SVG_Elements.TestSelenium31_Svg_Map">
+                <methods>
+                    <include name="test_map"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_08_WebTables.Dynamic_WebTables">
+                <methods>
+                    <include name="staticTable"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_08_WebTables.Static_WebTables">
+                <methods>
+                    <include name="staticTable"/>
+                </methods>
+            </class>
+
+            <!-- Action Classes -->
+            <class name="com.thetestingacademy.ex_10_Action_Classes.TestSelenium32_ActionClass">
+                <methods>
+                    <include name="actionKey"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_10_Action_Classes.TestSelenium33_ActionClass">
+                <methods>
+                    <include name="actionKey"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_10_Action_Classes.TestSelenium34_makeMyTrip_example">
+                <methods>
+                    <include name="verifyMMT"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_10_Action_Classes.TestSelenium35_PageUp_Down">
+                <methods>
+                    <include name="testUpDownKey"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_10_Action_Classes.TestSelenium36_Drag_Drop">
+                <methods>
+                    <include name="verifyMMT"/>
+                </methods>
+            </class>
+
+            <!-- File Uploads, Windows, JS -->
+            <class name="com.thetestingacademy.ex_11_File_Uploads.TestSelenium37_FileUpload">
+                <methods>
+                    <include name="fileUpload"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_12_Windows.TestSelenium38_Windows">
+                <methods>
+                    <include name="verifyHandles"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_13_JavaScript_Executor.TestSelenium40_js_ex">
+                <methods>
+                    <include name="verifyJS_ex"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_14_Shadow_Dom.TestSelenium41_JS_Code_ShadowDom">
+                <methods>
+                    <include name="verifyShadowDom"/>
+                </methods>
+            </class>
+
+            <!-- Relative Locators -->
+            <class name="com.thetestingacademy.ex_15_Relative_Locator.TestSelenium43_RL_P2">
+                <methods>
+                    <include name="verifyerror"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_15_Relative_Locator.TestSelenium44_RL_P3">
+                <methods>
+                    <include name="verifyAqi"/>
+                </methods>
+            </class>
+
+            <!-- Data Driven POI -->
+            <class name="com.thetestingacademy.ex_17_Data_Driven_Testing_POI.TestSelenium50_TestNG_POi">
+                <methods>
+                    <include name="verifyInvalidCredentials"/>
+                </methods>
+            </class>
+
+            <class name="com.thetestingacademy.ex_17_Data_Driven_Testing_POI.TestSelenium51_POI_Excel">
+                <methods>
+                    <include name="verifyInvalidCredentials"/>
+                </methods>
+            </class>
+        </classes>
+
+    </test>
+</suite>
