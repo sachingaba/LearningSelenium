@@ -15,6 +15,7 @@ public class TestSelenium33_ActionClass {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.spicejet.com/");
+        ///driver.get("https://www.spicejet.com/");
 
         WebElement from_input = driver.findElement(By.xpath("//div[@data-testid=\"to-testID-origin\"]/div/div/input"));
         WebElement to_input = driver.findElement(By.xpath("//input[@value=\"Select Destination\"]"));
