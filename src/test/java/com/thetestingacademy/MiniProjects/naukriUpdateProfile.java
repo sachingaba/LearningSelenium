@@ -23,7 +23,7 @@ public class naukriUpdateProfile {
         WebElement login = driver.findElement(By.xpath("//a[@id=\"login_Layer\"]"));
         login.click();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(7));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@placeholder=\"Enter your active Email ID / Username\"]")));
 
         WebElement username = driver.findElement(By.xpath("//input[@placeholder=\"Enter your active Email ID / Username\"]"));
