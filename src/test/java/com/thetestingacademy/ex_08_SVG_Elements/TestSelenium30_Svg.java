@@ -44,7 +44,7 @@ public class TestSelenium30_Svg {
                 count++;
 
             }
-            if(nextBtn.isEnabled()) {
+            if(nextBtn.isDisplayed()) {
                 nextBtn.click();
 
                 wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[.//span[contains(text(), 'Next')]]")));
