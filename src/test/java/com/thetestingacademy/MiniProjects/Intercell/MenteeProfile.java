@@ -48,6 +48,7 @@ public class MenteeProfile extends CommonToALL {
         lastName.clear();
         lastName.sendKeys("GabaTest");
 
+        takeScreenshot(driver);
 
         WebElement chooseGender = driver.findElement(By.xpath("//select[@name=\"gender\"]"));
         Select selectGender = new Select(chooseGender);

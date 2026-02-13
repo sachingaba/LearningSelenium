@@ -13,13 +13,13 @@ public class TestSelenium40_js_ex {
         WebDriver driver = new ChromeDriver();
          driver.manage().window().maximize();
 
-         driver.get("https://www.google.com");
+         driver.navigate().to("https://www.google.com");
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
     //    js.executeScript("alert(8)");
 
         js.executeScript("window.location='https://www.intercellworld.com/home'");
-        js.executeScript("window.scroll(0,500);");
+        js.executeScript("window.scroll(0,document.body.scrollHeight);");
 
      String url =   js.executeScript("return document.URL;").toString();
        String title =  js.executeScript("return document.title;").toString();
