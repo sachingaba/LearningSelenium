@@ -39,6 +39,7 @@ public class TestSelenium28_Alerts extends CommonToALL {
         alert.accept();
 
 
+
         WebElement result = driver.findElement(By.id("result"));
         Assert.assertEquals(result.getText(),"You successfully clicked an alert");
 closeBrowser(driver);
