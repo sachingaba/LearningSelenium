@@ -29,6 +29,8 @@ public class TestSelenium017_Project_Locators_Selenium_ID_ClassName_Name extends
         //Email
         WebElement email_Input_Box = driver.findElement(By.xpath("//*[@id=\"myAnchor\"]/div/div[1]/div/div[2]/form/div/div[1]/input"));
         email_Input_Box.sendKeys("iamasjd@ma.com");
+        email_Input_Box.getAriaRole();
+        email_Input_Box.getCssValue("font-color");
         // Password
        WebElement password_Input_Box = driver.findElement(By.xpath("//*[@id=\"show_hide_password\"]/input"));
        password_Input_Box.sendKeys("Intercell@123");

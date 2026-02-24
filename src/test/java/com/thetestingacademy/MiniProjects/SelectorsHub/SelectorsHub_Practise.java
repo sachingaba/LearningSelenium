@@ -2,6 +2,7 @@ package com.thetestingacademy.MiniProjects.SelectorsHub;
 
 import com.thetestingacademy.CommonToALL;
 import com.thetestingacademy.ex_07_Wait_Helper.WaitHelpers;
+import com.thetestingacademy.resources.TakeScreenshot;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -11,12 +12,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.time.Duration;
 
 public class SelectorsHub_Practise extends CommonToALL {
 
-    @Test
-    public void verifyForm(){
+    @Test(invocationCount =5 )
+    public void verifyForm() throws IOException {
 
         WebDriver driver = new ChromeDriver();
 
@@ -111,6 +113,7 @@ js.executeScript("window.scrollBy(0,900)");
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),\"Pay\")]")));
         action.moveToElement(submitPay).build().perform();
         submitPay.click();
+        TakeScreenshot.TakeScr(driver);
 Assert.assertEquals(driver.getCurrentUrl(),"https://selectorshub.com/xpath-practice-page/?");
 
         closeBrowser(driver);

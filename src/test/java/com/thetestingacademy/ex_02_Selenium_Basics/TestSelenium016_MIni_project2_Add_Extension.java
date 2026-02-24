@@ -1,5 +1,6 @@
 package com.thetestingacademy.ex_02_Selenium_Basics;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,6 +21,7 @@ public class TestSelenium016_MIni_project2_Add_Extension {
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.Youtube.com");
+        driver.manage().window().setSize(new Dimension(1024, 768));
 
         Thread.sleep(15000);
         driver.quit();

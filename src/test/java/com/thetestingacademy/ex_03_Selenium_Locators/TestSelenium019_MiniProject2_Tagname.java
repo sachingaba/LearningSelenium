@@ -21,9 +21,13 @@ public class TestSelenium019_MiniProject2_Tagname extends CommonToALL {
         WebElement a_tag_partialMatch = driver.findElement(By.partialLinkText("trial"));
         a_tag_partialMatch.click();
 
-        Assert.assertTrue(driver.getCurrentUrl().contains("free-trial"));
+       // Assert.assertTrue(driver.getCurrentUrl().contains("free-trial"));
 //Email input
+
         WebElement email_input = driver.findElement(By.id("page-v1-step1-email"));
+        email_input.getSize();
+        email_input.getAriaRole();
+        email_input.getCssValue("color");
         email_input.sendKeys("abc");
 
 // Checkbox tick

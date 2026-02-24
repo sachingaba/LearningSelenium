@@ -24,7 +24,11 @@ public class TestSelenium018_LinkText_Partial_Text_TagName_Locators {
 
         //Partail text match
         WebElement Partailclick_freeTrial = driver.findElement(By.partialLinkText("Start a free trial"));
+        Partailclick_freeTrial.getSize();
         Partailclick_freeTrial.click();
+
+        System.out.println(Partailclick_freeTrial.getAriaRole());
+        System.out.println(Partailclick_freeTrial.getCssValue("Font-size"));
 
         driver.quit();
     }
