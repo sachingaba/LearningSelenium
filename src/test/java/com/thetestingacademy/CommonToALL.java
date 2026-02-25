@@ -1,6 +1,7 @@
 package com.thetestingacademy;
 
 import io.qameta.allure.Attachment;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -8,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 
 public class CommonToALL {
@@ -42,7 +45,8 @@ public class CommonToALL {
 
     }
     @Attachment(value = "Profile screenshot", type = "image/png")
-    public byte[] takeScreenshot(WebDriver driver) {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+    public void takeScreenshot(WebDriver driver) throws IOException {
+        File f1 = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(f1,new File("C:\\Users\\devin\\IdeaProjects\\LearningSelenium\\.screenshot"));
     }
 }
