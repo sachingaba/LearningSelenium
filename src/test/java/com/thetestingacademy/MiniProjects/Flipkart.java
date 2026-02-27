@@ -10,7 +10,10 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 public class Flipkart {
@@ -50,6 +53,48 @@ String parent = driver.getWindowHandle();
         Set<String> handles = driver.getWindowHandles();
 
         driver.switchTo().window(parent);
+
+
+    }
+    @Test
+    public void VerifyLinks() throws IOException {
+
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://www.flipkart.com/");
+        driver.manage().window().maximize();
+
+        WaitHelpers.checkVisibility(driver,By.className("b3wTlE"));
+
+        driver.findElement(By.className("b3wTlE")).click();
+
+        WebElement search = driver.findElement(By.name("q"));
+        //search.sendKeys("mobiles");
+
+        Actions action = new Actions(driver);
+
+
+
+        action.moveToElement(search).click().sendKeys("mobile").sendKeys(Keys.ENTER).build().perform();
+        System.out.println("here");
+        //WebElement button = driver.findElement(By.xpath("//button[@class=\"XFwMiH\" and @type=\"submit\"]"));
+        // button.click();
+        String parent = driver.getWindowHandle();
+
+        List<WebElement> mobiles = driver.findElements(By.tagName("a"));
+        String  fileName =  "links_" +  ".txt";
+        FileWriter writer = new FileWriter(fileName);
+        for(WebElement mobile: mobiles){
+            System.out.println(mobile.getAttribute("href"));
+            writer.write("\n"+Objects.requireNonNull(mobile.getAttribute("href")));
+           // if(mobile.getText().contains("POCO")){
+               // mobile.click();
+          //  }
+        }
+
+
+      //  Set<String> handles = driver.getWindowHandles();
+
+    //    driver.switchTo().window(parent);
 
 
     }
