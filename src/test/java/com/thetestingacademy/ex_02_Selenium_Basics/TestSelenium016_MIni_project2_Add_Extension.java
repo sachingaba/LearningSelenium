@@ -19,7 +19,7 @@ public class TestSelenium016_MIni_project2_Add_Extension {
         File path = new File("src/test/java/com/thetestingacademy/AdBlocker.zip");
         chromeOptions.addExtensions(path);
 
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver(chromeOptions);
         driver.get("https://www.Youtube.com");
         driver.manage().window().setSize(new Dimension(1024, 768));
 

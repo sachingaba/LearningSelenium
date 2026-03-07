@@ -3,6 +3,7 @@ package com.thetestingacademy.Ex_16_Selenium_Exceptions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
@@ -14,6 +15,8 @@ public class TestSelenium47_Stale {
 
         driver.manage().window().maximize();
 
+      //  driver.switchTo().newWindow(WindowType.WINDOW).get("https://yahoo.com");
+
        WebElement search =  driver.findElement(By.id("APjFqb"));
        driver.navigate().refresh();
         try {
@@ -21,7 +24,7 @@ public class TestSelenium47_Stale {
         } catch (Exception e) {
             System.out.println("Error!!");
         }
-
+driver.switchTo().newWindow(WindowType.TAB).get("https://Google.com");
         driver.quit();
 
 

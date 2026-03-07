@@ -14,7 +14,7 @@ public class testSelenium002 {
         FirefoxDriver f1 = new FirefoxDriver();
         f1.get("http://www.youtube.com");
 
-
+f1.quit();
     }
 
     @Test
@@ -24,6 +24,7 @@ public class testSelenium002 {
 
         WebDriver driver = new ChromeDriver(options);
         driver.get("https://www.google.com");
-
+driver.quit();
     }
+
 }

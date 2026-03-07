@@ -2,10 +2,7 @@ package com.thetestingacademy.MiniProjects;
 
 import com.thetestingacademy.ex_07_Wait_Helper.WaitHelpers;
 import com.thetestingacademy.resources.PropertiesReader;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
@@ -35,6 +32,10 @@ public class ebayTest {
             }
 
         }
+        driver.switchTo().newWindow(WindowType.TAB);
+        actions.contextClick().build().perform();
+        WaitHelpers.waitJVM(3000);
+        driver.navigate().to("https://www.google.com");
 driver.quit();
 
     }

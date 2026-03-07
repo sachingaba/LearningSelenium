@@ -11,6 +11,8 @@ public class TestSelenium003 {
 
 
         f1.get("https://sdet.live");
+
+        f1.quit();
     }
 
 }
